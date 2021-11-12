@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+:root {
+    --primary-color:  #224364d5;
+    --secondary-color:  #c92f25;
+    --dark-color:  #101b24;
+    --light-color:  #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+font-family: 'Lato', sans-serif;
+color: #333;
+line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 5px 0;
+}
+
+img {
+    width: 100%;
+}
+
+code, pre {
+    background-color: #333333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 75px;
+    
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: 2px #fff solid;
+}
+
+.navbar .flex{
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--light-color);
+    font-weight: 300;
+
+}
+
+.fab {
+    margin: 10px;
+}
+
+/* Showcase */
+
+.showcase {
+    height: 400;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+
+.showcase h3 {
+    font-size: 20px;
+}
+
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid{
+    overflow: visible;
+    grid-template-columns: 55% 45%;
+    gap: 3px;
+}
+
+.showcase-text {
+    animation: slideinfromleft 1s ease-in;
+}
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    animation: slideinfromright 1s ease-in;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email'] {
+    border: 0;
+    border-bottom: 1px solid #90b5be;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus {
+    outline: none;
+}
+
+.showcase::before,
+.showcase::after {
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    transform: skewY(-3deg);
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+}
+
+/* Quote */
+
+.quote {
+    padding-top: 100px;
+    animation: slideinfrombottom 1s ease-in;
+}
+
+.quote-heading {
+    max-width: 500px;
+    margin: auto;
+}
+
+.quote .grid h3 {
+    font-size: 35px;
+}
+
+.quote .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Footer */
+
+.copy {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/* Animations */
+
+@keyframes slideinfromleft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideinfromright {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideinfromtop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideinfrombottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Tablets and under */
+@media(max-width: 768px) {
+.grid,
+.showcase .grid,
+.quote .grid,
+.cli .grid,
+.cloud .grid,
+.features-main .grid,
+.docs-main .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.showcase {
+    height: auto;
+}
+
+.showcase-text {
+    text-align: center;
+    margin-top: 40px;
+    animation: slideinfromtop 1s ease-in;
+}
+
+.showcase-form {
+    justify-self: center;
+    margin: auto;
+    animation: slideinfrombottom 1s ease-in;
+}
+
+
+
+/* Mobile */
+@media(max-with: 500px) {
+    .navbar {
+        height: 110px;
+    }
+
+.navbar .flex {
+    flex-direction: column;
+}
+
+.navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .11);
+}}}
